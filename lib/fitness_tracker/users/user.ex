@@ -1,4 +1,4 @@
-defmodule FitnessTracker.Tracker.User do
+defmodule FitnessTracker.Users.User do
   use Ecto.Schema
   import Ecto.Changeset
 

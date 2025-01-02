@@ -1,4 +1,4 @@
-defmodule FitnessTracker.Tracker do
+defmodule FitnessTracker.Users do
   @moduledoc """
   The Tracker context.
   """
@@ -6,7 +6,7 @@ defmodule FitnessTracker.Tracker do
   import Ecto.Query, warn: false
   alias FitnessTracker.Repo
 
-  alias FitnessTracker.Tracker.User
+  alias FitnessTracker.Users.User
 
   @doc """
   Returns the list of user.

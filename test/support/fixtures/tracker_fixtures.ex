@@ -13,7 +13,7 @@ defmodule FitnessTracker.TrackerFixtures do
       |> Enum.into(%{
         name: "some name"
       })
-      |> FitnessTracker.Tracker.create_user()
+      |> FitnessTracker.Users.create_user()
 
     user
   end
