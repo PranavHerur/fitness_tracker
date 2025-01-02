@@ -17,4 +17,18 @@ defmodule FitnessTracker.ActivitiesFixtures do
 
     bike_ride
   end
+
+  @doc """
+  Generate a body_weight.
+  """
+  def body_weight_fixture(attrs \\ %{}) do
+    {:ok, body_weight} =
+      attrs
+      |> Enum.into(%{
+        name: "some name"
+      })
+      |> FitnessTracker.Activities.create_body_weight()
+
+    body_weight
+  end
 end

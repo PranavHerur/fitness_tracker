@@ -84,4 +84,58 @@ defmodule FitnessTracker.ActivitiesTest do
       assert %Ecto.Changeset{} = Activities.change_bike_ride(bike_ride)
     end
   end
+
+  describe "body_weight" do
+    alias FitnessTracker.Activities.BodyWeight
+
+    import FitnessTracker.ActivitiesFixtures
+
+    @invalid_attrs %{name: nil}
+
+    test "list_body_weight/0 returns all body_weight" do
+      body_weight = body_weight_fixture()
+      assert Activities.list_body_weight() == [body_weight]
+    end
+
+    test "get_body_weight!/1 returns the body_weight with given id" do
+      body_weight = body_weight_fixture()
+      assert Activities.get_body_weight!(body_weight.uid) == body_weight
+    end
+
+    test "create_body_weight/1 with valid data creates a body_weight" do
+      valid_attrs = %{name: "some name"}
+
+      assert {:ok, %BodyWeight{} = body_weight} = Activities.create_body_weight(valid_attrs)
+      assert body_weight.name == "some name"
+    end
+
+    test "create_body_weight/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Activities.create_body_weight(@invalid_attrs)
+    end
+
+    test "update_body_weight/2 with valid data updates the body_weight" do
+      body_weight = body_weight_fixture()
+      update_attrs = %{name: "some updated name"}
+
+      assert {:ok, %BodyWeight{} = body_weight} = Activities.update_body_weight(body_weight, update_attrs)
+      assert body_weight.name == "some updated name"
+    end
+
+    test "update_body_weight/2 with invalid data returns error changeset" do
+      body_weight = body_weight_fixture()
+      assert {:error, %Ecto.Changeset{}} = Activities.update_body_weight(body_weight, @invalid_attrs)
+      assert body_weight == Activities.get_body_weight!(body_weight.uid)
+    end
+
+    test "delete_body_weight/1 deletes the body_weight" do
+      body_weight = body_weight_fixture()
+      assert {:ok, %BodyWeight{}} = Activities.delete_body_weight(body_weight)
+      assert nil == Activities.get_body_weight!(body_weight.uid)
+    end
+
+    test "change_body_weight/1 returns a body_weight changeset" do
+      body_weight = body_weight_fixture()
+      assert %Ecto.Changeset{} = Activities.change_body_weight(body_weight)
+    end
+  end
 end
