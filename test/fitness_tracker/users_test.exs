@@ -6,7 +6,7 @@ defmodule FitnessUsers.TrackerTest do
   describe "user" do
     alias FitnessTracker.Users.User
 
-    import FitnessTracker.TrackerFixtures
+    import FitnessTracker.UsersFixtures
 
     @invalid_attrs %{name: nil}
 

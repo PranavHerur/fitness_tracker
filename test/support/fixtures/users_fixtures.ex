@@ -1,4 +1,4 @@
-defmodule FitnessTracker.TrackerFixtures do
+defmodule FitnessTracker.UsersFixtures do
   @moduledoc """
   This module defines test helpers for creating
   entities via the `FitnessTracker.Tracker` context.
